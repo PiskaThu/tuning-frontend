@@ -6,7 +6,7 @@ const securityCodes = {
     },
     "Mae11": {
         "passaporte": "411",
-        "nome": "Marrie"
+        "nome": "Maria da Silva"
     },
     // Adicione mais códigos conforme necessário
 };
@@ -117,7 +117,7 @@ function generateModificationList() {
     const embed = {
         "embeds": [{
             "title": "Nota fiscal - Top Secret",
-            "description": `**${clienteNome} - ID ${clientePassaporte}**\n**${mecanicoNome} - ID ${mecanicoPassaporte}**\n\n**Lista de modificações:**\n${modificationsList}`,
+            "description": `**"${clienteNome} e ID ${clientePassaporte}"**\n**"${mecanicoNome} e ID ${mecanicoPassaporte}"**\n\n**Lista de modificações:**\n${modificationsList}`,
             "fields": [
                 {
                     "name": "Valor da nota:",
