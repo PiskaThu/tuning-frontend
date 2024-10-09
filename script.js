@@ -93,21 +93,22 @@ function generateModificationList() {
 
     // Monta o objeto embed
     const embedObject = {
-        "content": "",  // Mensagem opcional, pode estar vazia
-        "embeds": [
+        content: "",  // Mensagem principal, pode estar vazia
+        embeds: [
           {
-            "title": "Nota fiscal - Top Secret",
-            "description": `**"${clienteNome} e ID ${clientePassaporte}"**\n**"${mecanicoNome} e ID ${mecanicoPassaporte}"**\n\n**Lista de modificações:**\n${modificationsList}`,
-            "fields": [
+            title: "Nota fiscal - Top Secret",  // Título da mensagem
+            description: `**"${clienteNome} e ID ${clientePassaporte}"**\n**"${mecanicoNome} e ID ${mecanicoPassaporte}"**\n\n**Lista de modificações:**\n${modificationsList}`,
+            fields: [
               {
-                "name": "Valor da nota:",
-                "value": valorTotal
+                name: "Valor da nota:",
+                value: `"${valorTotal}"`
               }
             ],
-            "color": 6331316  // Um código hexadecimal para a cor da barra lateral da embed
+            color: 6331316  // Cor da barra lateral do embed
           }
         ]
       };
+      
       
 
     // Prepara os dados para enviar ao backend
