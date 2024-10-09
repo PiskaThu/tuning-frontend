@@ -93,26 +93,22 @@ function generateModificationList() {
 
     // Monta o objeto embed
     const embedObject = {
-        "content": "",
-        "tts": false,
+        "content": "",  // Mensagem opcional, pode estar vazia
         "embeds": [
-            {
-                "id": Math.floor(Math.random() * 1000000000), // ID aleatório
-                "description": `**"${clienteNome} e ID ${clientePassaporte}"**\n**"{{mecanicoNome}} e ID {{mecanicoPassaporte}}"**\n\n**Lista de modificações:**\n${modificationsList}`,
-                "fields": [
-                    {
-                        "id": Math.floor(Math.random() * 1000000000), // ID aleatório
-                        "name": "Valor da nota:",
-                        "value": `"${valorTotal}"`
-                    }
-                ],
-                "title": "Nota fiscal - Top Secret",
-                "color": 6331316
-            }
-        ],
-        "components": [],
-        "actions": {}
-    };
+          {
+            "title": "Nota fiscal - Top Secret",
+            "description": `**"${clienteNome} e ID ${clientePassaporte}"**\n**"${mecanicoNome} e ID ${mecanicoPassaporte}"**\n\n**Lista de modificações:**\n${modificationsList}`,
+            "fields": [
+              {
+                "name": "Valor da nota:",
+                "value": valorTotal
+              }
+            ],
+            "color": 6331316  // Um código hexadecimal para a cor da barra lateral da embed
+          }
+        ]
+      };
+      
 
     // Prepara os dados para enviar ao backend
     const data = {
