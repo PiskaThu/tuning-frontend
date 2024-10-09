@@ -97,7 +97,7 @@ function generateModificationList() {
         embeds: [
           {
             title: "Nota fiscal - Top Secret",  // Título da mensagem
-            description: `**"${clienteNome} e ID ${clientePassaporte}"**\n**"${mecanicoNome} e ID ${mecanicoPassaporte}"**\n\n**Lista de modificações:**\n${modificationsList}`,
+            description: `**"${clienteNome} e ID ${clientePassaporte}"**\n\n\n**Lista de modificações:**\n${modificationsList}`,
             fields: [
               {
                 name: "Valor da nota:",
