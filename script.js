@@ -103,8 +103,7 @@ function generateModificationList() {
                 name: "Valor da nota:",
                 value: `"${valorTotal}"`
               }
-            ],
-            color: 6331316  // Cor da barra lateral do embed
+            ]
           }
         ]
       };
