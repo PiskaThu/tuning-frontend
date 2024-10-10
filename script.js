@@ -1,16 +1,3 @@
-// Lista de códigos de segurança com informações do mecânico
-const securityCodes = {
-    "Piska45": {
-        "passaporte": "365",
-        "nome": "Gregory McGregory"
-    },
-    "Mae11": {
-        "passaporte": "411",
-        "nome": "Maria da Silva"
-    },
-    // Adicione mais códigos conforme necessário
-};
-
 // Função para atualizar o valor total
 function updateTotal() {
     let total = 0;
@@ -52,20 +39,10 @@ function generateModificationList() {
     // Solicita o código de segurança
     const userCode = prompt("Por favor, insira o código de segurança para gerar a nota fiscal:");
 
-    // Verifica se o código de segurança é válido
-    if (!securityCodes.hasOwnProperty(userCode)) {
-        alert("Código de segurança inválido. A nota fiscal não pode ser gerada.");
-        return;
-    }
-
-    // Obtém as informações do mecânico a partir do código de segurança
-    const mecanicoInfo = securityCodes[userCode];
-    const mecanicoNome = mecanicoInfo.nome;
-    const mecanicoPassaporte = mecanicoInfo.passaporte;
-
     // Verifica se os campos do cliente estão preenchidos
     const clienteNome = document.getElementById('nome-cliente').value.trim();
     const clientePassaporte = document.getElementById('passaporte').value.trim();
+    const clienteVeiculo = document.getElementById('modelo-carro').value.trim();
 
     if (!clienteNome || !clientePassaporte) {
         alert("Por favor, preencha o nome e o passaporte do cliente antes de gerar a nota fiscal.");
@@ -113,87 +90,49 @@ function generateModificationList() {
     const totalField = document.getElementById('total').innerText;
     const valorTotal = totalField.replace('Valor Total: ', '');
 
-    // Monta o objeto embed
-    const embed = {
-        "embeds": [{
-            "title": "Nota fiscal - Top Secret",
-            "description": `**Cliente: ${clienteNome} - ID ${clientePassaporte}**\n**Mecanico: ${mecanicoNome} - ID ${mecanicoPassaporte}**\n\n**Lista de modificações:**\n${modificationsList}`,
-            "fields": [
-                {
-                    "name": "Valor da nota:",
-                    "value": `${valorTotal}`
-                }
-            ],
-            "color": 6331316
-        }]
-    };
-
-    // Envia o embed diretamente para o webhook do Discord
-    sendEmbed(embed);
 }
 
-// Função para enviar o embed ao webhook do Discord
-function sendEmbed(embed) {
-    // URL do webhook do Discord
-    const webhookURL = "https://discord.com/api/webhooks/1293626145358745641/yzVkuytNvMoaBY2ZYMmh3tiiMitJhwvmVYyamFCko1K0jEsP_X6-H43yV9aTly2hM6e7";
+  // Prepara os dados para enviar ao backend
+  const data = {
+    clienteNome,
+    clientePassaporte,
+    userCode,
+    modificationsList,
+    valorTotal,
+    clienteVeiculo
+  };
 
-    // Para contornar restrições de CORS durante os testes, você pode usar um proxy (não recomendado para produção)
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const discordWebhookProxyURL = proxyUrl + webhookURL;
+  // Envia os dados ao backend
+  sendDataToBackend(data);
 
-    fetch(discordWebhookProxyURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(embed)
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Nota fiscal enviada com sucesso!');
-        } else {
-            alert('Erro ao enviar a nota fiscal.');
-            console.error('Erro:', response.statusText);
-        }
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Erro ao enviar a nota fiscal.');
-    });
+
+// Função para enviar os dados ao backend
+function sendDataToBackend(data) {
+  // URL da sua função Netlify
+  const netlifyFunctionURL = 'https://<seu-site>.netlify.app/.netlify/functions/sendDiscordWebhook';
+
+  fetch(netlifyFunctionURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) {
+      alert("Nota fiscal enviada com sucesso!");
+    } else {
+      response.text().then(text => {
+        alert("Erro ao enviar a nota fiscal: " + text);
+        console.error('Erro ao enviar para o servidor:', text);
+      });
+    }
+  })
+  .catch(error => {
+    console.error('Erro:', error);
+    alert('Erro ao enviar a nota fiscal.');
+  });
 }
 
-// Adiciona eventos aos selects, inputs de quantidade e checkboxes
-function addEventListeners() {
-    const items = document.querySelectorAll('.item');
-
-    items.forEach(item => {
-        const quantityInput = item.querySelector('input.quantity');
-        const levelSelect = item.querySelector('select.level');
-        const checkbox = item.querySelector('input[type="checkbox"]');
-
-        if (levelSelect) {
-            levelSelect.addEventListener('change', updateTotal);
-            quantityInput.addEventListener('input', updateTotal);
-        }
-
-        if (checkbox) {
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
-                    quantityInput.disabled = false;
-                } else {
-                    quantityInput.disabled = true;
-                    quantityInput.value = 1;
-                }
-                updateTotal();
-            });
-            quantityInput.addEventListener('input', updateTotal);
-        }
-    });
-
-    // Evento para o botão "Gerar Lista"
-    const generateListBtn = document.getElementById('generate-list-btn');
-    generateListBtn.addEventListener('click', generateModificationList);
-}
-
-// Inicializa os event listeners ao carregar a página
-window.onload = addEventListeners;
+// Adiciona o evento ao botão
+document.getElementById('generate-list-btn').addEventListener('click', generateModificationList);
