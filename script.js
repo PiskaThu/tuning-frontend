@@ -134,7 +134,7 @@ function updateTotal() {
   // Função para enviar os dados ao backend
   function sendDataToBackend(data) {
     // URL da sua função Netlify
-    const netlifyFunctionURL = 'https://<seu-site>.netlify.app/.netlify/functions/sendDiscordWebhook';
+    const netlifyFunctionURL = 'https://mecdopiska.netlify.app/.netlify/functions/sendDiscordWebhook';
   
     fetch(netlifyFunctionURL, {
       method: 'POST',
