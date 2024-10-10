@@ -48,7 +48,7 @@ function updateTotal() {
     // Coleta os dados do veículo
     const carroModelo = document.getElementById('modelo-carro').value.trim();
   
-    if (!carroModelo || !carroNome) {
+    if (!carroModelo) {
       alert("Por favor, preencha o nome e o modelo do carro.");
       return;
     }
