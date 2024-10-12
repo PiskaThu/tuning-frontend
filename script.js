@@ -120,7 +120,7 @@ function generateModificationList() {
   const clientePassaporte = document.getElementById('passaporte').value.trim();
 
   // Coleta os dados do veículo
-  const carroNome = document.getElementById('nome-carro').value.trim();
+  const carroNome = document.getElementById('modelo-carro').value.trim();
 
   // Coleta o código do mecânico
   const userCode = document.getElementById('user-code').value.trim();
