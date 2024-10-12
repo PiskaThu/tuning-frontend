@@ -104,7 +104,7 @@ function validateClientAndVehicleInfo() {
   const clientePassaporte = document.getElementById('passaporte').value.trim();
 
   // Coleta os dados do veículo
-  const carroNome = document.getElementById('nome-carro').value.trim();
+  const carroNome = document.getElementById('modelo-carro').value.trim();
 
   if (!clienteNome || !clientePassaporte || !carroNome) {
     alert("Por favor, preencha todos os campos do cliente e do veículo.");
