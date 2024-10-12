@@ -1,51 +1,61 @@
-/* Estilos Globais */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: inline-block;
-    width: 150px;
-  }
-  
-  input[type="text"], select {
-    width: 200px;
-    padding: 5px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-  
-  /* Estilos para os Itens */
-  .item {
-    margin-bottom: 10px;
-  }
-  
-  .item label {
-    width: auto;
-  }
-  
-  .quantity {
-    width: 50px;
-  }
-  
-  /* Estilos para o Valor Total */
-  #total {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+h2 {
+  margin-top: 20px;
+}
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.category-column {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.category {
+  margin-bottom: 20px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.item input.quantity {
+  width: 50px;
+  margin-right: 5px;
+}
+.item select.level {
+  margin-right: 5px;
+}
+.item label {
+  flex-grow: 1;
+}
+#total {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  clear: both;
+}
+/* Estilos para o formulário de informações do cliente */
+#client-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#client-info label {
+  margin-right: 10px;
+}
+#client-info input {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
   
   /* Estilos para o Modal */
   .modal {
