@@ -296,22 +296,24 @@
         <div id="total">Valor Total: R$ 0,00</div>
         <button id="generate-list-btn">Gerar Nota Fiscal</button>
 
-        <!-- Modal -->
-        <div id="modal" class="modal">
-          <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <h2>Confirmação</h2>
-            <div>
-              <label for="user-code">Código do Mecânico:</label>
-              <input type="text" id="user-code">
-            </div>
-            <div>
-              <label for="vehicle-image">Imagem do Veículo:</label>
-              <input type="file" id="vehicle-image" accept="image/*">
-            </div>
-            <button id="confirm-btn">Confirmar e Enviar</button>
-          </div>
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2>Confirmação</h2>
+      <div>
+        <label for="user-code">Código do Mecânico:</label>
+        <input type="text" id="user-code">
+      </div>
+      <div>
+        <label>Imagem do Veículo:</label>
+        <div id="paste-area" class="paste-area">
+          <p>Clique aqui e pressione Ctrl+V para colar a imagem do veículo.</p>
         </div>
+      </div>
+      <button id="confirm-btn">Confirmar e Enviar</button>
+    </div>
+  </div>
     </div>
 
 
