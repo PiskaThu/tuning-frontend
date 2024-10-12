@@ -3,66 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tuning de Veículos</title>
-    <style>
-        /* Estilos básicos */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h2 {
-            margin-top: 20px;
-        }
-        .categories-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .category-column {
-            flex: 1 1 45%;
-            box-sizing: border-box;
-            padding: 0 10px;
-        }
-        .category {
-            margin-bottom: 20px;
-        }
-        .item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .item input.quantity {
-            width: 50px;
-            margin-right: 5px;
-        }
-        .item select.level {
-            margin-right: 5px;
-        }
-        .item label {
-            flex-grow: 1;
-        }
-        #total {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            clear: both;
-        }
-        /* Estilos para o formulário de informações do cliente */
-        #client-info {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        #client-info label {
-            margin-right: 10px;
-        }
-        #client-info input {
-            margin-right: 20px;
-            margin-bottom: 10px;
-            width: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -353,11 +294,26 @@
     
     <div id="total-container">
         <div id="total">Valor Total: R$ 0,00</div>
-        <button id="generate-list-btn">Gerar Lista</button>
+        <button id="generate-list-btn">Gerar Nota Fiscal</button>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Confirmação</h2>
+            <div>
+              <label for="user-code">Código do Mecânico:</label>
+              <input type="text" id="user-code">
+            </div>
+            <div>
+              <label for="vehicle-image">Imagem do Veículo:</label>
+              <input type="file" id="vehicle-image" accept="image/*">
+            </div>
+            <button id="confirm-btn">Confirmar e Enviar</button>
+          </div>
+        </div>
     </div>
 
-    <!-- Lista de Modificações -->
-    <div id="modifications-list"></div>
 
     <!-- Script JavaScript -->
     <script src="script.js"></script>
