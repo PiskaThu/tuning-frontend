@@ -2,11 +2,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
   background-color: #333333; /* Fundo cinza */
-  color: #9C1A15; /* Todas as letras brancas */
+  color: #ce4440; /* Todas as letras brancas */
 }
 h2 {
   margin-top: 20px;
-  color: #9C1A15; /* Letras brancas */
+  color: #ce4440; /* Letras brancas */
 }
 .categories-container {
   display: flex;
@@ -26,7 +26,7 @@ h2 {
   align-items: center;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #9C1A15; /* Letras brancas */
+  color: #ce4440; /* Letras brancas */
 }
 .item input.quantity {
   width: 50px;
@@ -39,20 +39,63 @@ h2 {
   flex-grow: 1;
   color: #b3b3b3; /* Letras brancas */
 }
+
+/* Estilo para input do tipo text */
+input[type="text"] {
+  background-color: #b8b5b5; /* Cor de fundo */
+  color: #333333; /* Cor do texto */
+  border: 1px solid #cccccc; /* Borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-sizing: border-box; /* Garante que o padding não afete o tamanho total */
+}
+
+/* Estilo para inputs em foco */
+input[type="text"]:focus {
+  background-color: #ffffff; /* Fundo branco ao focar */
+  border-color: #ce4440; /* Cor da borda ao focar */
+  outline: none; /* Remove a borda padrão do navegador */
+}
+
+/* Estilo para input do tipo checkbox */
+input{
+  accent-color: #ce4440; /* Cor do checkbox */
+  width: 20px; /* Largura do checkbox */
+  height: 20px; /* Altura do checkbox */
+  border-radius: 7px; /* Bordas levemente arredondadas */
+}
+
+/* Estilo para o menu select */
+select {
+  background-color: #b8b5b5; /* Cor de fundo */
+  color: #000000; /* Cor do texto */
+  border: 1px solid #cccccc; /* Borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-sizing: border-box; /* Garante que o padding não afete o tamanho total */
+  padding: 5px; /* Espaçamento interno */
+}
+
+/* Estilo para o select em foco */
+select:focus {
+  background-color: #ffffff; /* Fundo branco ao focar */
+  border-color: #ce4440; /* Cor da borda ao focar */
+  outline: none; /* Remove a borda padrão do navegador */
+}
+
 #total {
-  font-size: var(--total-font-size, 24px); /* Controlável por variável */
+  font-size: 1.125rem;
   font-weight: bold;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   margin: 0; /* Removido o margin-top para manter alinhado */
   flex-grow: 1;
   text-align: right;
-  padding: 13px 10px; /* Diminuído o padding para tornar o fundo menos largo */
-  border-radius: .5rem;
+  padding: .75rem 1.2rem; /* Diminuído o padding para tornar o fundo menos largo */
+  border-radius: .75rem;
   color: #ffffff;
   width: fit-content;
 }
 
 .total-container-tex {
-  background-color: #9C1A15;
+  background-color: #ce4440;
   border-radius: .75rem;
 }
 
@@ -83,6 +126,11 @@ h2 {
   width: auto;
 }
 
+#generate-list-btn:hover {
+  background-color: #1f2937; /* Cor de fundo mais clara no hover */
+  color: #E5E7EB; /* Cor do texto mais clara no hover */
+}
+
 
 #generate-list-btn:focus {
   box-shadow: none;
@@ -94,7 +142,6 @@ h2 {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  gap: 20px; /* Espaçamento entre o botão e o valor total */
 }
 
 /* Estilos para o formulário de informações do cliente */
@@ -113,6 +160,10 @@ h2 {
   margin-right: 20px;
   margin-bottom: 10px;
   width: 200px;
+}
+
+.mechanic-number {
+  width: 200px; /* Você pode definir o tamanho desejado */
 }
 
   /* Estilos para o Modal */
@@ -199,6 +250,5 @@ h2 {
 #confirm-btn:hover {
     background-color: #1f2937; /* Cor de fundo mais clara no hover */
     color: #E5E7EB; /* Cor do texto mais clara no hover */
-    border: 1px solid #4B5563; /* Adiciona uma borda visível no hover */
 }
 

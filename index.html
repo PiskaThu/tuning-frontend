@@ -7,11 +7,11 @@
 </head>
 <body>
 
-    <h1>Tuning de Veículos</h1>
+    <h1>Jinshu Tunning</h1>
 
     <div id="client-info">
         <label for="passaporte">Passaporte do cliente:</label>
-        <input type="number" id="passaporte" name="passaporte" required>
+        <input type="text" id="passaporte" name="passaporte" required>
 
         <label for="nome-cliente">Nome do cliente:</label>
         <input type="text" id="nome-cliente" name="nome-cliente" required>
@@ -293,10 +293,10 @@
     </div>
     
     <div id="total-container">
-        <button id="generate-list-btn">Gerar Nota Fiscal</button>
         <div class="total-container-tex">
             <p id="total"></p>
         </div>
+        <button id="generate-list-btn">Gerar Nota Fiscal</button>
     </div>
 <!-- Modal -->
     <div id="modal" class="modal">
@@ -305,7 +305,7 @@
         <h2>Confirmação</h2>
         <div>
             <label for="user-code">Código do Mecânico:</label>
-            <input type="text" id="user-code">
+            <input type="text" id="user-code" class="mechanic-number">
         </div>
         <div>
             <label>Imagem do Veículo:</label>
