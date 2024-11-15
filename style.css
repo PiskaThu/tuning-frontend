@@ -1,9 +1,12 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  background-color: #333333; /* Fundo cinza */
+  color: #11885a; /* Todas as letras brancas */
 }
 h2 {
   margin-top: 20px;
+  color: #11885a; /* Letras brancas */
 }
 .categories-container {
   display: flex;
@@ -23,6 +26,7 @@ h2 {
   align-items: center;
   margin-bottom: 10px;
   font-size: 14px;
+  color: #11885a; /* Letras brancas */
 }
 .item input.quantity {
   width: 50px;
@@ -33,22 +37,77 @@ h2 {
 }
 .item label {
   flex-grow: 1;
+  color: #b3b3b3; /* Letras brancas */
 }
 #total {
-  font-size: 24px;
+  font-size: var(--total-font-size, 24px); /* Controlável por variável */
   font-weight: bold;
-  margin-top: 20px;
-  clear: both;
+  margin: 0; /* Removido o margin-top para manter alinhado */
+  flex-grow: 1;
+  text-align: right;
+  padding: 13px 10px; /* Diminuído o padding para tornar o fundo menos largo */
+  border-radius: .5rem;
+  color: #ffffff;
+  width: fit-content;
 }
+
+.total-container-tex {
+  background-color: #11885a;
+  border-radius: .75rem;
+}
+
+#generate-list-btn {
+  margin-right: 20px;
+  margin-left: auto; /* Isso empurra o botão para o lado direito */
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+
+#generate-list-btn:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#total-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px; /* Espaçamento entre o botão e o valor total */
+}
+
 /* Estilos para o formulário de informações do cliente */
 #client-info {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 20px;
+  color: #b3b3b3; /* Letras brancas */
 }
 #client-info label {
   margin-right: 10px;
+  color: #b3b3b3; /* Letras brancas */
 }
 #client-info input {
   margin-right: 20px;
@@ -56,7 +115,6 @@ h2 {
   width: 200px;
 }
 
-  
   /* Estilos para o Modal */
   .modal {
     display: none; /* Oculto por padrão */
@@ -71,15 +129,17 @@ h2 {
   }
   
   .modal-content {
-    background-color: #fefefe;
+    background-color: #4b4a4a;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+    color: #ffffff; /* Letras brancas */
+    line-height: 2;
   }
   
   .close {
-    color: #aaa;
+    color: #ffffff; /* Letras brancas */
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -98,11 +158,47 @@ h2 {
     padding: 20px;
     text-align: center;
     cursor: pointer;
-    background-color: #fafafa;
+    background-color: #2c2c2c;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #ffffff; /* Letras brancas */
   }
   
   .paste-area img {
     max-width: 100%;
     height: auto;
   }
-  
+
+  #confirm-btn {
+    margin-right: 20px;
+    margin-left: auto; /* Isso empurra o botão para o lado direito */
+    background-color: #111827;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+}
+
+#confirm-btn:hover {
+    background-color: #1f2937; /* Cor de fundo mais clara no hover */
+    color: #E5E7EB; /* Cor do texto mais clara no hover */
+    border: 1px solid #4B5563; /* Adiciona uma borda visível no hover */
+}
+
