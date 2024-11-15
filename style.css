@@ -2,11 +2,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
   background-color: #333333; /* Fundo cinza */
-  color: #11885a; /* Todas as letras brancas */
+  color: #9C1A15; /* Todas as letras brancas */
 }
 h2 {
   margin-top: 20px;
-  color: #11885a; /* Letras brancas */
+  color: #9C1A15; /* Letras brancas */
 }
 .categories-container {
   display: flex;
@@ -26,7 +26,7 @@ h2 {
   align-items: center;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #11885a; /* Letras brancas */
+  color: #9C1A15; /* Letras brancas */
 }
 .item input.quantity {
   width: 50px;
@@ -52,7 +52,7 @@ h2 {
 }
 
 .total-container-tex {
-  background-color: #11885a;
+  background-color: #9C1A15;
   border-radius: .75rem;
 }
 
