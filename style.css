@@ -2,11 +2,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
   background-color: #333333; /* Fundo cinza */
-  color: #ce4440; /* Todas as letras brancas */
+  color: #47bffa; /* Todas as letras brancas */
 }
 h2 {
   margin-top: 20px;
-  color: #ce4440; /* Letras brancas */
+  color: #47bffa; /* Letras brancas */
 }
 .categories-container {
   display: flex;
@@ -26,7 +26,7 @@ h2 {
   align-items: center;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #ce4440; /* Letras brancas */
+  color: #47bffa; /* Letras brancas */
 }
 .item input.quantity {
   width: 50px;
@@ -52,13 +52,13 @@ input[type="text"] {
 /* Estilo para inputs em foco */
 input[type="text"]:focus {
   background-color: #ffffff; /* Fundo branco ao focar */
-  border-color: #ce4440; /* Cor da borda ao focar */
+  border-color: #47bffa; /* Cor da borda ao focar */
   outline: none; /* Remove a borda padrão do navegador */
 }
 
 /* Estilo para input do tipo checkbox */
 input{
-  accent-color: #ce4440; /* Cor do checkbox */
+  accent-color: #47bffa; /* Cor do checkbox */
   width: 20px; /* Largura do checkbox */
   height: 20px; /* Altura do checkbox */
   border-radius: 7px; /* Bordas levemente arredondadas */
@@ -77,7 +77,7 @@ select {
 /* Estilo para o select em foco */
 select:focus {
   background-color: #ffffff; /* Fundo branco ao focar */
-  border-color: #ce4440; /* Cor da borda ao focar */
+  border-color: #47bffa; /* Cor da borda ao focar */
   outline: none; /* Remove a borda padrão do navegador */
 }
 
@@ -95,7 +95,7 @@ select:focus {
 }
 
 .total-container-tex {
-  background-color: #ce4440;
+  background-color: #47bffa;
   border-radius: .75rem;
 }
 
